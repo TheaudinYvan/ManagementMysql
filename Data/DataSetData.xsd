@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetData" targetNamespace="http://tempuri.org/DataSetData.xsd" xmlns:mstns="http://tempuri.org/DataSetData.xsd" xmlns="http://tempuri.org/DataSetData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetData" msprop:Generator_UserDSName="DataSetData">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Groups" msprop:Generator_TableClassName="GroupsDataTable" msprop:Generator_TableVarName="tableGroups" msprop:Generator_TablePropName="Groups" msprop:Generator_RowDeletingName="GroupsRowDeleting" msprop:Generator_RowChangingName="GroupsRowChanging" msprop:Generator_RowEvHandlerName="GroupsRowChangeEventHandler" msprop:Generator_RowDeletedName="GroupsRowDeleted" msprop:Generator_UserTableName="Groups" msprop:Generator_RowChangedName="GroupsRowChanged" msprop:Generator_RowEvArgName="GroupsRowChangeEvent" msprop:Generator_RowClassName="GroupsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="IdAws" msprop:Generator_ColumnVarNameInTable="columnIdAws" msprop:Generator_ColumnPropNameInRow="IdAws" msprop:Generator_ColumnPropNameInTable="IdAwsColumn" msprop:Generator_UserColumnName="IdAws" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_UserTableName="Users" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_RowEvArgName="UsersRowChangeEvent" msprop:Generator_RowClassName="UsersRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="IdAws" msprop:Generator_ColumnVarNameInTable="columnIdAws" msprop:Generator_ColumnPropNameInRow="IdAws" msprop:Generator_ColumnPropNameInTable="IdAwsColumn" msprop:Generator_UserColumnName="IdAws" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Droits" msprop:Generator_TableClassName="DroitsDataTable" msprop:Generator_TableVarName="tableDroits" msprop:Generator_TablePropName="Droits" msprop:Generator_RowDeletingName="DroitsRowDeleting" msprop:Generator_RowChangingName="DroitsRowChanging" msprop:Generator_RowEvHandlerName="DroitsRowChangeEventHandler" msprop:Generator_RowDeletedName="DroitsRowDeleted" msprop:Generator_UserTableName="Droits" msprop:Generator_RowChangedName="DroitsRowChanged" msprop:Generator_RowEvArgName="DroitsRowChangeEvent" msprop:Generator_RowClassName="DroitsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
+              <xs:element name="IdGroupAws" msprop:Generator_ColumnVarNameInTable="columnIdGroupAws" msprop:Generator_ColumnPropNameInRow="IdGroupAws" msprop:Generator_ColumnPropNameInTable="IdGroupAwsColumn" msprop:Generator_UserColumnName="IdGroupAws" type="xs:string" minOccurs="0" />
+              <xs:element name="DroitCSV" msprop:Generator_ColumnVarNameInTable="columnDroitCSV" msprop:Generator_ColumnPropNameInRow="DroitCSV" msprop:Generator_ColumnPropNameInTable="DroitCSVColumn" msprop:Generator_UserColumnName="DroitCSV" type="xs:string" minOccurs="0" />
+              <xs:element name="TypeServer" msprop:Generator_ColumnVarNameInTable="columnTypeServer" msprop:Generator_ColumnPropNameInRow="TypeServer" msprop:Generator_ColumnPropNameInTable="TypeServerColumn" msprop:Generator_UserColumnName="TypeServer" type="xs:string" minOccurs="0" />
+              <xs:element name="TypeDroit" msprop:Generator_ColumnVarNameInTable="columnTypeDroit" msprop:Generator_ColumnPropNameInRow="TypeDroit" msprop:Generator_ColumnPropNameInTable="TypeDroitColumn" msprop:Generator_UserColumnName="TypeDroit" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="GroupsKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Groups" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="UsersKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Users" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="DroitsKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Droits" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
