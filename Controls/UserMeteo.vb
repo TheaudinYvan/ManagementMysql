@@ -11,6 +11,7 @@
 
     End Property
 
+
     Private _KO As String
     Public Property KO As String
         Get
