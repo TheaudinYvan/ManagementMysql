@@ -94,6 +94,9 @@
         Me.ImageCollection1.Images.SetKeyName(38, "Virginia-Flag32.png")
         Me.ImageCollection1.Images.SetKeyName(39, "mysql.png")
         Me.ImageCollection1.Images.SetKeyName(40, "mariadb.png")
+        Me.ImageCollection1.InsertImage(Global.ManagementMysql.My.Resources.Resources.tag_16x16, "tag_16x16", GetType(Global.ManagementMysql.My.Resources.Resources), 41)
+        Me.ImageCollection1.Images.SetKeyName(41, "tag_16x16")
+        Me.ImageCollection1.Images.SetKeyName(42, "login.png")
         '
         'DataSetData1
         '

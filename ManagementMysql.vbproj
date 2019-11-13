@@ -92,6 +92,9 @@
     <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraVerticalGrid.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="ICSharpCode.TextEditor, Version=4.2.0.0, Culture=neutral, PublicKeyToken=4d61825e8dd49f1a, processorArchitecture=MSIL">
+      <HintPath>packages\ICSharpCode.TextEditor.Extended.4.2.4\lib\net45\ICSharpCode.TextEditor.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeAnalysis, Version=3.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.CodeAnalysis.Common.3.3.1\lib\netstandard2.0\Microsoft.CodeAnalysis.dll</HintPath>
     </Reference>
@@ -156,6 +159,12 @@
       <DependentUpon>UserChart.vb</DependentUpon>
     </Compile>
     <Compile Include="Controls\UserChart.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserGrants.Designer.vb">
+      <DependentUpon>UserGrants.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserGrants.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\UserStatInstance.designer.vb">
@@ -261,6 +270,9 @@
     <EmbeddedResource Include="Controls\UserChart.resx">
       <DependentUpon>UserChart.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserGrants.resx">
+      <DependentUpon>UserGrants.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\UserStatInstance.resx">
       <DependentUpon>UserStatInstance.vb</DependentUpon>
     </EmbeddedResource>
@@ -365,6 +377,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\iconfinder_119_connected_connections_user_internet_global_4307912.png" />
+    <None Include="Resources\login.png" />
+    <None Include="Resources\tag_16x16.png" />
     <None Include="Resources\iconfinder_165_Infrastructure_monitoring_surveillance_vision_eye_network_cloud_smart_computing_4178958.png" />
     <None Include="Resources\iconfinder_user-group-team-duo-partner_3209200.png" />
     <None Include="Resources\iconfinder_User_4737448.png" />

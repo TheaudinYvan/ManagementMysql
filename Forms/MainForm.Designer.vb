@@ -29,6 +29,7 @@ Partial Class MainForm
         Me.Bar2 = New DevExpress.XtraBars.Bar()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.Bar3 = New DevExpress.XtraBars.Bar()
+        Me.SkinDropDownButtonItem1 = New DevExpress.XtraBars.SkinDropDownButtonItem()
         Me.BarEditCredentials = New DevExpress.XtraBars.BarEditItem()
         Me.RepositoryCredentials = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox()
         Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl()
@@ -43,6 +44,7 @@ Partial Class MainForm
         Me.NodeUsers = New DevComponents.AdvTree.Node()
         Me.UserGroups = New DevComponents.AdvTree.Node()
         Me.Node1 = New DevComponents.AdvTree.Node()
+        Me.NodeGrantsSql = New DevComponents.AdvTree.Node()
         Me.NodeConnector1 = New DevComponents.AdvTree.NodeConnector()
         Me.ElementStyle1 = New DevComponents.DotNetBar.ElementStyle()
         Me.DockPanel2 = New DevExpress.XtraBars.Docking.DockPanel()
@@ -59,7 +61,6 @@ Partial Class MainForm
         Me.FlyoutPanelControl1 = New DevExpress.Utils.FlyoutPanelControl()
         Me.adornerUIManager1 = New DevExpress.Utils.VisualEffects.AdornerUIManager(Me.components)
         Me.dashMainBadge = New DevExpress.Utils.VisualEffects.Badge()
-        Me.SkinDropDownButtonItem1 = New DevExpress.XtraBars.SkinDropDownButtonItem()
         CType(Me.DocumentManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryCredentials, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -95,7 +96,7 @@ Partial Class MainForm
         Me.BarManager1.Form = Me
         Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarEditCredentials, Me.BarButtonItem1, Me.SkinDropDownButtonItem1})
         Me.BarManager1.MainMenu = Me.Bar2
-        Me.BarManager1.MaxItemId = 4
+        Me.BarManager1.MaxItemId = 5
         Me.BarManager1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryCredentials})
         Me.BarManager1.StatusBar = Me.Bar3
         '
@@ -130,6 +131,11 @@ Partial Class MainForm
         Me.Bar3.OptionsBar.DrawDragBorder = False
         Me.Bar3.OptionsBar.UseWholeRow = True
         Me.Bar3.Text = "Status bar"
+        '
+        'SkinDropDownButtonItem1
+        '
+        Me.SkinDropDownButtonItem1.Id = 3
+        Me.SkinDropDownButtonItem1.Name = "SkinDropDownButtonItem1"
         '
         'BarEditCredentials
         '
@@ -217,7 +223,7 @@ Partial Class MainForm
         Me.AdvTree1.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F"
         Me.AdvTree1.Location = New System.Drawing.Point(0, 0)
         Me.AdvTree1.Name = "AdvTree1"
-        Me.AdvTree1.Nodes.AddRange(New DevComponents.AdvTree.Node() {Me.NodeServers, Me.NodeUsers, Me.UserGroups, Me.Node1})
+        Me.AdvTree1.Nodes.AddRange(New DevComponents.AdvTree.Node() {Me.NodeServers, Me.NodeUsers, Me.UserGroups, Me.Node1, Me.NodeGrantsSql})
         Me.AdvTree1.NodesConnector = Me.NodeConnector1
         Me.AdvTree1.NodeStyle = Me.ElementStyle1
         Me.AdvTree1.PathSeparator = ";"
@@ -246,7 +252,7 @@ Partial Class MainForm
         Me.UserGroups.Expanded = True
         Me.UserGroups.Image = Global.ManagementMysql.My.Resources.Resources.iconfinder_user_group_team_duo_partner_3209200
         Me.UserGroups.Name = "UserGroups"
-        Me.UserGroups.Text = "UserGroup"
+        Me.UserGroups.Text = "Groups"
         '
         'Node1
         '
@@ -254,6 +260,14 @@ Partial Class MainForm
         Me.Node1.Image = Global.ManagementMysql.My.Resources.Resources.iconfinder_165_Infrastructure_monitoring_surveillance_vision_eye_network_cloud_smart_computing_4178958
         Me.Node1.Name = "Node1"
         Me.Node1.Text = "Monitoring"
+        '
+        'NodeGrantsSql
+        '
+        Me.NodeGrantsSql.Expanded = True
+        Me.NodeGrantsSql.Image = Global.ManagementMysql.My.Resources.Resources.login
+        Me.NodeGrantsSql.Name = "NodeGrantsSql"
+        Me.NodeGrantsSql.Text = "GrantSql"
+        Me.NodeGrantsSql.Tooltip = "MariaDb | MySQL"
         '
         'NodeConnector1
         '
@@ -363,11 +377,6 @@ Partial Class MainForm
         Me.adornerUIManager1.Elements.Add(Me.dashMainBadge)
         Me.adornerUIManager1.Owner = Me.DockPanel1
         '
-        'SkinDropDownButtonItem1
-        '
-        Me.SkinDropDownButtonItem1.Id = 3
-        Me.SkinDropDownButtonItem1.Name = "SkinDropDownButtonItem1"
-        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -440,4 +449,5 @@ Partial Class MainForm
     Friend WithEvents ButtonMetrics As DevComponents.DotNetBar.ButtonItem
     Friend WithEvents Node1 As DevComponents.AdvTree.Node
     Friend WithEvents SkinDropDownButtonItem1 As DevExpress.XtraBars.SkinDropDownButtonItem
+    Friend WithEvents NodeGrantsSql As DevComponents.AdvTree.Node
 End Class

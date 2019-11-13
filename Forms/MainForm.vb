@@ -19,7 +19,7 @@ Public Class MainForm
             ManagementMysqlApp.ManagementMysqlApplication.DataSetStat1.ReadXml("ConfiInstanceMetrics.xml")
         End If
 
-
+        NodeGrantsSql.Image = ManagementMysqlApp.ManagementMysqlApplication.ImageCollection1.Images("login.png")
 
 
         For Each z In ManagementMysqlApp.ManagementMysqlApplication.LoadCredentials()
@@ -162,7 +162,7 @@ Public Class MainForm
                         .Image = ManagementMysqlApp.ManagementMysqlApplication.ImageCollection1.Images(v.Engine.ToLower.ToString & ".png")
                     }
                     GetSnapShotList(v.DbiResourceId, Region)
-
+                    GetTagRds(cNewNodeDBInstance, v.DBInstanceArn, Region)
                     GetListMetricTreeGx(cNewNodeDBInstance, Region, BarEditCredentials.EditValue)
 
                     n.Nodes.Add(cNewNodeDBInstance)
@@ -182,6 +182,38 @@ Public Class MainForm
         End Try
 
     End Sub
+
+    Private Sub GetTagRds(ByVal Node As Node, ByVal DBInstanceArn As String, ByVal RegionEndpoint As RegionEndpoint)
+
+        Dim ListTagsForResourceRequest = New Amazon.RDS.Model.ListTagsForResourceRequest
+        'Dim lvalue As List(Of String) = New List(Of String)
+        'lvalue.Add(DbiResourceId)
+        'Dim Filter As New Filter With {
+        '    .Name = "dbi-resource-id",
+        '    .Values = lvalue
+        '}
+        'ListTagsForResourceRequest.Filters.Add(Filter)
+        ListTagsForResourceRequest.ResourceName = DBInstanceArn
+        'AmazonRDSClient = New AmazonRDSClient(ManagementMysqlApp.ManagementMysqlApplication.CreateAwsCredential(BarEditCredentials.EditValue), RegionEndpoint)
+        Dim response As Amazon.RDS.Model.ListTagsForResourceResponse = AmazonRDSClient.ListTagsForResource(ListTagsForResourceRequest)
+
+        For Each RTag As RDS.Model.Tag In response.TagList
+            If RTag.Key.ToString.Contains("Schema") Then
+                Dim RTagNode As New Node With {
+                        .Tag = RTag,
+                        .Text = RTag.Value,
+                        .Image = ManagementMysqlApp.ManagementMysqlApplication.ImageCollection1.Images("tag_16x16")
+                    }
+                Node.Nodes.Add(RTagNode)
+            End If
+        Next
+
+        'For Each vSN As DBSnapshot In response.DBSnapshots
+
+        'Next
+
+    End Sub
+
 
     Private Sub CNewNodeDBInstance_NodeMouseDown(sender As Object, e As MouseEventArgs)
         Dim cNewNodeDBInstance As Node = sender
@@ -352,5 +384,54 @@ Public Class MainForm
         ManagementMysqlApp.ManagementMysqlApplication.ColorChart = New Dictionary(Of String, Color)
         ManagementMysqlApp.ManagementMysqlApplication.DictChart.Clear()
         GetListmetric(BarEditCredentials.EditValue.ToString)
+    End Sub
+
+    Private Sub CreateGrantsUser(ByVal Db As String, ByVal Serveur As String, ByVal TypeServeur As String, ByVal UserGrants As UserGrants)
+
+        UserGrants.TextEditorControl1.AppendLine("# Server : " & Serveur)
+
+        For Each nuser As Node In NodeUsers.Nodes
+
+            For Each Ngroup As Node In nuser.Nodes
+                For Each r As DataSetData.DroitsRow In ManagementMysqlApp.ManagementMysqlApplication.DataSetData1.Droits.Select("IdGroupAws='" & Ngroup.Tag.ToString & "' AND TypeServer='" & TypeServeur & "'")
+                    If r Is Nothing Then
+                        DevComponents.DotNetBar.Controls.DesktopAlert.Show("no rights For : " & nuser.Text & "(Group: )" & Ngroup.Text, DevComponents.DotNetBar.Controls.eDesktopAlertColor.Green, DevComponents.DotNetBar.Controls.eAlertPosition.BottomRight)
+                    Else
+                        UserGrants.TextEditorControl1.AppendLine("#Type De droit : " & r.TypeDroit)
+                        UserGrants.TextEditorControl1.AppendLine("GRANT " & r.DroitCSV.Replace(";", ",") & " ON " & "*." & Db & " TO " & nuser.Text & ".*")
+                    End If
+                Next
+
+
+
+
+            Next
+
+        Next
+
+
+
+    End Sub
+
+    Private Sub NodeGrantsSql_NodeClick(sender As Object, e As EventArgs) Handles NodeGrantsSql.NodeClick
+        Dim UserGrants As New UserGrants
+
+        For Each nRegion As Node In NodeServers.Nodes
+            For Each nServeur As Node In nRegion.Nodes
+                Dim DBInstance As DBInstance = nServeur.Tag
+                For Each nTag As Node In nServeur.Nodes
+                    CreateGrantsUser(nTag.Text, nServeur.Text, DBInstance.Engine, UserGrants)
+                Next
+
+            Next
+
+        Next
+
+        'GRANT SELECT, INSERT, UPDATE ON *.* TO u1;
+        'REVOKE INSERT, Update ON db1.* FROM u1;
+        ' GRANT ALL PRIVILEGES ON books.authors  TO 'tolkien'@'localhost';
+
+        Dim pRDS As DevExpress.XtraBars.Docking2010.Views.BaseDocument = TabbedView1.AddDocument(UserGrants)
+        pRDS.Caption = "Grants Servers"
     End Sub
 End Class
