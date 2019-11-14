@@ -55,6 +55,7 @@ Partial Class MainForm
         Me.ButtonRegion = New DevComponents.DotNetBar.ButtonItem()
         Me.ButtonRefresh = New DevComponents.DotNetBar.ButtonItem()
         Me.ButtonMetrics = New DevComponents.DotNetBar.ButtonItem()
+        Me.ButtonCreateSnapShot = New DevComponents.DotNetBar.ButtonItem()
         Me.Flyout1 = New DevComponents.DotNetBar.Controls.Flyout(Me.components)
         Me.UserGridSnapShot1 = New ManagementMysql.UserGridSnapShot()
         Me.FlyoutPanel1 = New DevExpress.Utils.FlyoutPanel()
@@ -316,7 +317,7 @@ Partial Class MainForm
         '
         Me.ButtonContext.AutoExpandOnClick = True
         Me.ButtonContext.Name = "ButtonContext"
-        Me.ButtonContext.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ButtonRegion, Me.ButtonRefresh, Me.ButtonMetrics})
+        Me.ButtonContext.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ButtonRegion, Me.ButtonRefresh, Me.ButtonMetrics, Me.ButtonCreateSnapShot})
         Me.ButtonContext.Text = "ButtonItem1"
         '
         'ButtonRegion
@@ -339,6 +340,13 @@ Partial Class MainForm
         Me.ButtonMetrics.Symbol = ""
         Me.ButtonMetrics.SymbolSize = 12.0!
         Me.ButtonMetrics.Text = "Metrics"
+        '
+        'ButtonCreateSnapShot
+        '
+        Me.ButtonCreateSnapShot.Name = "ButtonCreateSnapShot"
+        Me.ButtonCreateSnapShot.Symbol = ""
+        Me.ButtonCreateSnapShot.SymbolSize = 12.0!
+        Me.ButtonCreateSnapShot.Text = "Create SnapShot"
         '
         'Flyout1
         '
@@ -450,4 +458,5 @@ Partial Class MainForm
     Friend WithEvents Node1 As DevComponents.AdvTree.Node
     Friend WithEvents SkinDropDownButtonItem1 As DevExpress.XtraBars.SkinDropDownButtonItem
     Friend WithEvents NodeGrantsSql As DevComponents.AdvTree.Node
+    Friend WithEvents ButtonCreateSnapShot As DevComponents.DotNetBar.ButtonItem
 End Class

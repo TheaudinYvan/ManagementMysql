@@ -434,4 +434,8 @@ Public Class MainForm
         Dim pRDS As DevExpress.XtraBars.Docking2010.Views.BaseDocument = TabbedView1.AddDocument(UserGrants)
         pRDS.Caption = "Grants Servers"
     End Sub
+
+    Private Sub ButtonCreateSnapShot_Click(sender As Object, e As EventArgs) Handles ButtonCreateSnapShot.Click
+        CreateSnapShot(AdvTree1.SelectedNode, GetRegion(AdvTree1.SelectedNode.Parent.Text), BarEditCredentials.EditValue)
+    End Sub
 End Class

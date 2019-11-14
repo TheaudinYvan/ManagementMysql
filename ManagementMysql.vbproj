@@ -205,6 +205,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Modules\AWSCloudWatch.vb" />
+    <Compile Include="Modules\AwsRds.vb" />
     <Compile Include="Modules\Metrics.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
