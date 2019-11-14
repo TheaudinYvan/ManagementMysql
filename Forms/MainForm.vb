@@ -198,13 +198,16 @@ Public Class MainForm
         Dim response As Amazon.RDS.Model.ListTagsForResourceResponse = AmazonRDSClient.ListTagsForResource(ListTagsForResourceRequest)
 
         For Each RTag As RDS.Model.Tag In response.TagList
-            If RTag.Key.ToString.Contains("Schema") Then
-                Dim RTagNode As New Node With {
+            If RTag.Key.ToString.Contains("Databases") Then
+                For Each z As String In RTag.Value.Split(":")
+                    Dim RTagNode As New Node With {
                         .Tag = RTag,
-                        .Text = RTag.Value,
+                        .Text = z,
                         .Image = ManagementMysqlApp.ManagementMysqlApplication.ImageCollection1.Images("tag_16x16")
                     }
-                Node.Nodes.Add(RTagNode)
+                    Node.Nodes.Add(RTagNode)
+                Next
+
             End If
         Next
 
