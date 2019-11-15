@@ -14,6 +14,10 @@ Module Regions
     End Function
 
     Public Function GetRegion(ByVal Name As String) As RegionEndpoint
+
+        Name = StripTags(Name)
+
+
         For Each v In RegionEndpoint.EnumerableAllRegions
             If v.DisplayName = Name Then
                 Return v
@@ -55,13 +59,13 @@ Module Regions
         Next
     End Sub
 
-    Public Sub GetCurrentRegionSelect()
+    Public Sub GetCurrentRegionSelect(ByVal Name As String)
         For Each s In My.Settings.MyRegion
             Dim n As New DevComponents.AdvTree.Node
             n.Text = s
             n.Tag = GetRegion(s)
             n.Image = ManagementMysqlApp.ManagementMysqlApplication.GetImageNodeFlag(s)
-            ManagementMysqlApp.ManagementMysqlApplication.AdvTree.FindNodeByDataKey("Servers").Nodes.Add(n)
+            ManagementMysqlApp.ManagementMysqlApplication.AdvTree.FindNodeByDataKey(Name).Nodes.Add(n)
         Next
     End Sub
 

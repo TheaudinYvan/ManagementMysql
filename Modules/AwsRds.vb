@@ -10,7 +10,7 @@ Module AwsRds
         Dim response = AmazonRDSClient.DescribeDBSnapshots(requestSnapp)
         For Each v As DBSnapshot In response.DBSnapshots
             If v.DBSnapshotArn = DBSnapshot.DBSnapshotArn Then
-                Console.WriteLine(v.PercentProgress)
+                'Console.WriteLine(v.PercentProgress)
 
                 Return v.PercentProgress
             End If

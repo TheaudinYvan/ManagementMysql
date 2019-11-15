@@ -41,10 +41,12 @@ Partial Class MainForm
         Me.DockPanel1_Container = New DevExpress.XtraBars.Docking.ControlContainer()
         Me.AdvTree1 = New DevComponents.AdvTree.AdvTree()
         Me.NodeServers = New DevComponents.AdvTree.Node()
+        Me.NodeContainer = New DevComponents.AdvTree.Node()
+        Me.NodeRepositories = New DevComponents.AdvTree.Node()
         Me.NodeUsers = New DevComponents.AdvTree.Node()
         Me.UserGroups = New DevComponents.AdvTree.Node()
-        Me.Node1 = New DevComponents.AdvTree.Node()
         Me.NodeGrantsSql = New DevComponents.AdvTree.Node()
+        Me.Node1 = New DevComponents.AdvTree.Node()
         Me.NodeConnector1 = New DevComponents.AdvTree.NodeConnector()
         Me.ElementStyle1 = New DevComponents.DotNetBar.ElementStyle()
         Me.DockPanel2 = New DevExpress.XtraBars.Docking.DockPanel()
@@ -224,7 +226,7 @@ Partial Class MainForm
         Me.AdvTree1.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F"
         Me.AdvTree1.Location = New System.Drawing.Point(0, 0)
         Me.AdvTree1.Name = "AdvTree1"
-        Me.AdvTree1.Nodes.AddRange(New DevComponents.AdvTree.Node() {Me.NodeServers, Me.NodeUsers, Me.UserGroups, Me.Node1, Me.NodeGrantsSql})
+        Me.AdvTree1.Nodes.AddRange(New DevComponents.AdvTree.Node() {Me.NodeServers, Me.NodeContainer, Me.NodeRepositories, Me.NodeUsers, Me.UserGroups, Me.NodeGrantsSql, Me.Node1})
         Me.AdvTree1.NodesConnector = Me.NodeConnector1
         Me.AdvTree1.NodeStyle = Me.ElementStyle1
         Me.AdvTree1.PathSeparator = ";"
@@ -241,6 +243,22 @@ Partial Class MainForm
         Me.NodeServers.Name = "NodeServers"
         Me.NodeServers.Text = "Servers"
         '
+        'NodeContainer
+        '
+        Me.NodeContainer.DataKeyString = "Container"
+        Me.NodeContainer.Expanded = True
+        Me.NodeContainer.Image = Global.ManagementMysql.My.Resources.Resources.amazon_elastic_container_icon
+        Me.NodeContainer.Name = "NodeContainer"
+        Me.NodeContainer.Text = "Elastic Container"
+        '
+        'NodeRepositories
+        '
+        Me.NodeRepositories.DataKeyString = "Repositories"
+        Me.NodeRepositories.Expanded = True
+        Me.NodeRepositories.Image = Global.ManagementMysql.My.Resources.Resources.iconfinder_repository_storage_store_database_data_file_3790083
+        Me.NodeRepositories.Name = "NodeRepositories"
+        Me.NodeRepositories.Text = "Repositories Container "
+        '
         'NodeUsers
         '
         Me.NodeUsers.Expanded = True
@@ -255,13 +273,6 @@ Partial Class MainForm
         Me.UserGroups.Name = "UserGroups"
         Me.UserGroups.Text = "Groups"
         '
-        'Node1
-        '
-        Me.Node1.Expanded = True
-        Me.Node1.Image = Global.ManagementMysql.My.Resources.Resources.iconfinder_165_Infrastructure_monitoring_surveillance_vision_eye_network_cloud_smart_computing_4178958
-        Me.Node1.Name = "Node1"
-        Me.Node1.Text = "Monitoring"
-        '
         'NodeGrantsSql
         '
         Me.NodeGrantsSql.Expanded = True
@@ -269,6 +280,13 @@ Partial Class MainForm
         Me.NodeGrantsSql.Name = "NodeGrantsSql"
         Me.NodeGrantsSql.Text = "GrantSql"
         Me.NodeGrantsSql.Tooltip = "MariaDb | MySQL"
+        '
+        'Node1
+        '
+        Me.Node1.Expanded = True
+        Me.Node1.Image = Global.ManagementMysql.My.Resources.Resources.iconfinder_165_Infrastructure_monitoring_surveillance_vision_eye_network_cloud_smart_computing_4178958
+        Me.Node1.Name = "Node1"
+        Me.Node1.Text = "Monitoring"
         '
         'NodeConnector1
         '
@@ -289,7 +307,7 @@ Partial Class MainForm
         Me.DockPanel2.Name = "DockPanel2"
         Me.DockPanel2.OriginalSize = New System.Drawing.Size(200, 200)
         Me.DockPanel2.Size = New System.Drawing.Size(823, 200)
-        Me.DockPanel2.Text = "The weather"
+        Me.DockPanel2.Text = "The weather SnapShot"
         '
         'DockPanel2_Container
         '
@@ -459,4 +477,6 @@ Partial Class MainForm
     Friend WithEvents SkinDropDownButtonItem1 As DevExpress.XtraBars.SkinDropDownButtonItem
     Friend WithEvents NodeGrantsSql As DevComponents.AdvTree.Node
     Friend WithEvents ButtonCreateSnapShot As DevComponents.DotNetBar.ButtonItem
+    Friend WithEvents NodeContainer As DevComponents.AdvTree.Node
+    Friend WithEvents NodeRepositories As DevComponents.AdvTree.Node
 End Class

@@ -11,4 +11,7 @@
         Me.Controls.Add(UserMeteo)
         'WindowsUIView1.Controller.Select(CType(InfoServer, DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document))
     End Sub
+
+
+
 End Class

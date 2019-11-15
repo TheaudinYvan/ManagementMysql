@@ -8,7 +8,7 @@ Imports DevExpress.Utils.VisualEffects
 Imports DevExpress.XtraSplashScreen
 
 Public Class MainForm
-
+    Private UserMonitoring As UserMonitoring
     Private InfoServer As DevExpress.XtraBars.Docking2010.Views.BaseDocument
     Private UserInfoServer As UserInfoServer
     Private DictDataTaBleSnapShot As New Dictionary(Of String, DataTable)
@@ -28,8 +28,13 @@ Public Class MainForm
         ManagementMysqlApp.ManagementMysqlApplication.AdvTree = Me.AdvTree1
         BarEditCredentials.EditValue = My.Settings.AwsProfile
         GetAvailabilityZone(ButtonRegion)
-        GetCurrentRegionSelect()
+
+        GetCurrentRegionSelect("Servers")
+        GetCurrentRegionSelect("Container")
+        GetCurrentRegionSelect("Repositories")
         GetRdsInstances(NodeServers, Me)
+        GetListCluster(NodeContainer, BarEditCredentials.EditValue, Me)
+        GetListRepositories(NodeRepositories, BarEditCredentials.EditValue, Me)
         ListUserIam()
 
         'EtatSnapShot()
@@ -294,8 +299,12 @@ Public Class MainForm
         UserGroups.Nodes.Clear()
         NodeUsers.Nodes.Clear()
         DictDataTaBleSnapShot.Clear()
-        GetCurrentRegionSelect()
+        GetCurrentRegionSelect("Servers")
+        GetCurrentRegionSelect("Container")
+        GetCurrentRegionSelect("Repositories")
         GetRdsInstances(NodeServers, Me)
+        GetListCluster(NodeContainer, BarEditCredentials.EditValue, Me)
+        GetListRepositories(NodeRepositories, BarEditCredentials.EditValue, Me)
         ListUserIam()
 
 
@@ -358,9 +367,15 @@ Public Class MainForm
 
     Private Sub EtatSnapShotByRegion()
 
-        Dim m As New UserMonitoring
-        m.Dock = DockStyle.Fill
-        DockPanel2.Controls.Add(m)
+        If UserMonitoring Is Nothing Then
+            UserMonitoring = New UserMonitoring
+            UserMonitoring.Dock = DockStyle.Fill
+            DockPanel2.Controls.Add(UserMonitoring)
+        End If
+
+        'Dim m As New UserMonitoring
+        'm.Dock = DockStyle.Fill
+        'DockPanel2.Controls.Add(m)
         Dim counterreur As Integer = 0
         Dim Serveur As Integer = 0
         'Dim oDate As DateTime = Convert.ToDateTime(Now.Date.ToString)
@@ -370,11 +385,14 @@ Public Class MainForm
                 Dim r As DataRow = DictDataTaBleSnapShot.Item(s.DbiResourceId).Select("SnapshotCreateTime >= '" & Now.Date.ToString & "'").FirstOrDefault
                 If r Is Nothing Then
                     counterreur += 1
+                    Dim c As New Cell
+                    c.Images.Image = ManagementMysqlApp.ManagementMysqlApplication.ImageCollection1.Images("warning_16x16")
+                    Server.Cells.Add(c)
                 End If
                 Serveur += 1
             Next
             If Serveur > 0 Then
-                m.LoadMeteo(Region.Text, counterreur, Serveur)
+                UserMonitoring.LoadMeteo(Region.Text, counterreur, Serveur)
             End If
             counterreur = 0
             Serveur = 0
@@ -439,6 +457,26 @@ Public Class MainForm
     End Sub
 
     Private Sub ButtonCreateSnapShot_Click(sender As Object, e As EventArgs) Handles ButtonCreateSnapShot.Click
-        CreateSnapShot(AdvTree1.SelectedNode, GetRegion(AdvTree1.SelectedNode.Parent.Text), BarEditCredentials.EditValue)
+        'CreateSnapShot(AdvTree1.SelectedNode, GetRegion(AdvTree1.SelectedNode.Parent.Text), BarEditCredentials.EditValue)
+
+        If AdvTree1.SelectedNode IsNot Nothing AndAlso TypeOf AdvTree1.SelectedNode.Tag Is DBInstance Then
+            Dim UserCreateSnapShot As New UserCreateSnapShot
+            UserCreateSnapShot.Profile = BarEditCredentials.EditValue
+            UserCreateSnapShot.Node = AdvTree1.SelectedNode
+            UserCreateSnapShot.RegionEndpoint = GetRegion(AdvTree1.SelectedNode.Parent.Text)
+            UserCreateSnapShot.Dock = DockStyle.Left
+            UserCreateSnapShot.LabelNameServer.Text = AdvTree1.SelectedNode.Text
+            If UserMonitoring Is Nothing Then
+                UserMonitoring = New UserMonitoring
+                UserMonitoring.Dock = DockStyle.Fill
+                DockPanel2.Controls.Add(UserMonitoring)
+            End If
+
+            UserMonitoring.Controls.Add(UserCreateSnapShot)
+            UserCreateSnapShot.StartSnapShop()
+        End If
+
+
+
     End Sub
 End Class
