@@ -160,35 +160,31 @@ Partial Class MainForm
         Me.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top
         Me.barDockControlTop.Location = New System.Drawing.Point(0, 0)
         Me.barDockControlTop.Manager = Me.BarManager1
-        Me.barDockControlTop.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.barDockControlTop.Size = New System.Drawing.Size(1570, 34)
+        Me.barDockControlTop.Size = New System.Drawing.Size(1047, 24)
         '
         'barDockControlBottom
         '
         Me.barDockControlBottom.CausesValidation = False
         Me.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.barDockControlBottom.Location = New System.Drawing.Point(0, 915)
+        Me.barDockControlBottom.Location = New System.Drawing.Point(0, 626)
         Me.barDockControlBottom.Manager = Me.BarManager1
-        Me.barDockControlBottom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.barDockControlBottom.Size = New System.Drawing.Size(1570, 39)
+        Me.barDockControlBottom.Size = New System.Drawing.Size(1047, 27)
         '
         'barDockControlLeft
         '
         Me.barDockControlLeft.CausesValidation = False
         Me.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left
-        Me.barDockControlLeft.Location = New System.Drawing.Point(0, 34)
+        Me.barDockControlLeft.Location = New System.Drawing.Point(0, 24)
         Me.barDockControlLeft.Manager = Me.BarManager1
-        Me.barDockControlLeft.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 881)
+        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 602)
         '
         'barDockControlRight
         '
         Me.barDockControlRight.CausesValidation = False
         Me.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right
-        Me.barDockControlRight.Location = New System.Drawing.Point(1570, 34)
+        Me.barDockControlRight.Location = New System.Drawing.Point(1047, 24)
         Me.barDockControlRight.Manager = Me.BarManager1
-        Me.barDockControlRight.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.barDockControlRight.Size = New System.Drawing.Size(0, 881)
+        Me.barDockControlRight.Size = New System.Drawing.Size(0, 602)
         '
         'DockManager1
         '
@@ -202,20 +198,18 @@ Partial Class MainForm
         Me.DockPanel1.Controls.Add(Me.DockPanel1_Container)
         Me.DockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left
         Me.DockPanel1.ID = New System.Guid("81ae15e5-1165-4c37-9e57-4f7ce6246e37")
-        Me.DockPanel1.Location = New System.Drawing.Point(0, 34)
-        Me.DockPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DockPanel1.Location = New System.Drawing.Point(0, 24)
         Me.DockPanel1.Name = "DockPanel1"
         Me.DockPanel1.OriginalSize = New System.Drawing.Size(224, 200)
-        Me.DockPanel1.Size = New System.Drawing.Size(336, 881)
+        Me.DockPanel1.Size = New System.Drawing.Size(149, 602)
         Me.DockPanel1.Text = "List of servers"
         '
         'DockPanel1_Container
         '
         Me.DockPanel1_Container.Controls.Add(Me.AdvTree1)
-        Me.DockPanel1_Container.Location = New System.Drawing.Point(6, 30)
-        Me.DockPanel1_Container.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DockPanel1_Container.Location = New System.Drawing.Point(4, 23)
         Me.DockPanel1_Container.Name = "DockPanel1_Container"
-        Me.DockPanel1_Container.Size = New System.Drawing.Size(321, 845)
+        Me.DockPanel1_Container.Size = New System.Drawing.Size(140, 575)
         Me.DockPanel1_Container.TabIndex = 0
         '
         'AdvTree1
@@ -231,13 +225,12 @@ Partial Class MainForm
         Me.AdvTree1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.AdvTree1.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F"
         Me.AdvTree1.Location = New System.Drawing.Point(0, 0)
-        Me.AdvTree1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.AdvTree1.Name = "AdvTree1"
         Me.AdvTree1.Nodes.AddRange(New DevComponents.AdvTree.Node() {Me.NodeServers, Me.NodeContainer, Me.NodeRepositories, Me.NodeUsers, Me.UserGroups, Me.NodeGrantsSql, Me.Node1})
         Me.AdvTree1.NodesConnector = Me.NodeConnector1
         Me.AdvTree1.NodeStyle = Me.ElementStyle1
         Me.AdvTree1.PathSeparator = ";"
-        Me.AdvTree1.Size = New System.Drawing.Size(321, 845)
+        Me.AdvTree1.Size = New System.Drawing.Size(140, 575)
         Me.AdvTree1.Styles.Add(Me.ElementStyle1)
         Me.AdvTree1.TabIndex = 2
         Me.AdvTree1.Text = "AdvTree1"
@@ -310,19 +303,17 @@ Partial Class MainForm
         Me.DockPanel2.Controls.Add(Me.DockPanel2_Container)
         Me.DockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top
         Me.DockPanel2.ID = New System.Guid("59a6786a-6283-4410-be1d-1d3f2e00af03")
-        Me.DockPanel2.Location = New System.Drawing.Point(336, 34)
-        Me.DockPanel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DockPanel2.Location = New System.Drawing.Point(149, 24)
         Me.DockPanel2.Name = "DockPanel2"
         Me.DockPanel2.OriginalSize = New System.Drawing.Size(200, 200)
-        Me.DockPanel2.Size = New System.Drawing.Size(1234, 292)
+        Me.DockPanel2.Size = New System.Drawing.Size(898, 137)
         Me.DockPanel2.Text = "The weather SnapShot"
         '
         'DockPanel2_Container
         '
-        Me.DockPanel2_Container.Location = New System.Drawing.Point(6, 30)
-        Me.DockPanel2_Container.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DockPanel2_Container.Location = New System.Drawing.Point(4, 23)
         Me.DockPanel2_Container.Name = "DockPanel2_Container"
-        Me.DockPanel2_Container.Size = New System.Drawing.Size(1222, 253)
+        Me.DockPanel2_Container.Size = New System.Drawing.Size(890, 109)
         Me.DockPanel2_Container.TabIndex = 0
         '
         'ContextMenuBar1
@@ -331,10 +322,9 @@ Partial Class MainForm
         Me.ContextMenuBar1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.ContextMenuBar1.IsMaximized = False
         Me.ContextMenuBar1.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ButtonContext})
-        Me.ContextMenuBar1.Location = New System.Drawing.Point(532, 894)
-        Me.ContextMenuBar1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ContextMenuBar1.Location = New System.Drawing.Point(355, 612)
         Me.ContextMenuBar1.Name = "ContextMenuBar1"
-        Me.ContextMenuBar1.Size = New System.Drawing.Size(112, 33)
+        Me.ContextMenuBar1.Size = New System.Drawing.Size(75, 25)
         Me.ContextMenuBar1.Stretch = True
         Me.ContextMenuBar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.ContextMenuBar1.TabIndex = 6
@@ -386,19 +376,17 @@ Partial Class MainForm
         '
         Me.UserGridSnapShot1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UserGridSnapShot1.Location = New System.Drawing.Point(2, 2)
-        Me.UserGridSnapShot1.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.UserGridSnapShot1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.UserGridSnapShot1.Name = "UserGridSnapShot1"
-        Me.UserGridSnapShot1.Size = New System.Drawing.Size(872, 221)
+        Me.UserGridSnapShot1.Size = New System.Drawing.Size(580, 150)
         Me.UserGridSnapShot1.TabIndex = 12
         '
         'FlyoutPanel1
         '
         Me.FlyoutPanel1.Controls.Add(Me.FlyoutPanelControl1)
-        Me.FlyoutPanel1.Location = New System.Drawing.Point(634, 729)
-        Me.FlyoutPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.FlyoutPanel1.Location = New System.Drawing.Point(423, 499)
         Me.FlyoutPanel1.Name = "FlyoutPanel1"
-        Me.FlyoutPanel1.OptionsButtonPanel.ButtonPanelHeight = 44
-        Me.FlyoutPanel1.Size = New System.Drawing.Size(876, 225)
+        Me.FlyoutPanel1.Size = New System.Drawing.Size(584, 154)
         Me.FlyoutPanel1.TabIndex = 13
         '
         'FlyoutPanelControl1
@@ -407,9 +395,8 @@ Partial Class MainForm
         Me.FlyoutPanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlyoutPanelControl1.FlyoutPanel = Me.FlyoutPanel1
         Me.FlyoutPanelControl1.Location = New System.Drawing.Point(0, 0)
-        Me.FlyoutPanelControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.FlyoutPanelControl1.Name = "FlyoutPanelControl1"
-        Me.FlyoutPanelControl1.Size = New System.Drawing.Size(876, 225)
+        Me.FlyoutPanelControl1.Size = New System.Drawing.Size(584, 154)
         Me.FlyoutPanelControl1.TabIndex = 0
         '
         'adornerUIManager1
@@ -419,9 +406,9 @@ Partial Class MainForm
         '
         'MainForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 19.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1570, 954)
+        Me.ClientSize = New System.Drawing.Size(1047, 653)
         Me.Controls.Add(Me.FlyoutPanel1)
         Me.Controls.Add(Me.ContextMenuBar1)
         Me.Controls.Add(Me.DockPanel1)
@@ -430,7 +417,6 @@ Partial Class MainForm
         Me.Controls.Add(Me.barDockControlRight)
         Me.Controls.Add(Me.barDockControlBottom)
         Me.Controls.Add(Me.barDockControlTop)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "MainForm"
         Me.Text = "ManagementMySQL"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

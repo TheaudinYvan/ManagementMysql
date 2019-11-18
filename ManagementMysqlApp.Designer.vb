@@ -99,6 +99,7 @@
         Me.ImageCollection1.Images.SetKeyName(42, "login.png")
         Me.ImageCollection1.InsertImage(Global.ManagementMysql.My.Resources.Resources.warning_16x16, "warning_16x16", GetType(Global.ManagementMysql.My.Resources.Resources), 43)
         Me.ImageCollection1.Images.SetKeyName(43, "warning_16x16")
+        Me.ImageCollection1.Images.SetKeyName(44, "EC2.png")
         '
         'DataSetData1
         '
