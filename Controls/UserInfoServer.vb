@@ -3,11 +3,14 @@
 
         Dim DeleteDoc As DevExpress.XtraBars.Docking2010.Views.BaseDocument = Nothing
 
-        For Each z As DevExpress.XtraBars.Docking2010.Views.BaseDocument In WidgetView1.Documents
-            If z.Caption = NameServer Then
-                DeleteDoc = z
-            End If
-        Next
+        If WidgetView1.Documents IsNot Nothing Then
+            For Each z As DevExpress.XtraBars.Docking2010.Views.BaseDocument In WidgetView1.Documents
+                If z.Caption = NameServer Then
+                    DeleteDoc = z
+                End If
+            Next
+        End If
+
 
         If DeleteDoc IsNot Nothing Then
             DeleteDoc.Dispose()

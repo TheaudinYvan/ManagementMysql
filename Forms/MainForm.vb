@@ -33,12 +33,14 @@ Public Class MainForm
         GetCurrentRegionSelect("Container")
         GetCurrentRegionSelect("Repositories")
         GetRdsInstances(NodeServers, Me)
+
         GetListCluster(NodeContainer, BarEditCredentials.EditValue, Me)
         GetListRepositories(NodeRepositories, BarEditCredentials.EditValue, Me)
         ListUserIam()
 
         'EtatSnapShot()
         EtatSnapShotByRegion()
+        GetInstanceEc2(NodeServers, BarEditCredentials.EditValue, Me)
         'InitBadge(dashMainBadge, 3, DockPanel1)
     End Sub
 

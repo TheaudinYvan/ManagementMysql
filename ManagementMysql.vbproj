@@ -62,6 +62,9 @@
     <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
       <HintPath>packages\AWSSDK.Core.3.3.103.64\lib\net45\AWSSDK.Core.dll</HintPath>
     </Reference>
+    <Reference Include="AWSSDK.EC2, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>packages\AWSSDK.EC2.3.3.135\lib\net45\AWSSDK.EC2.dll</HintPath>
+    </Reference>
     <Reference Include="AWSSDK.ECR, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
       <HintPath>packages\AWSSDK.ECR.3.3.102.9\lib\net45\AWSSDK.ECR.dll</HintPath>
     </Reference>
@@ -219,6 +222,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Modules\AWSCloudWatch.vb" />
+    <Compile Include="Modules\AwsEc2.vb" />
     <Compile Include="Modules\AWSECS.vb" />
     <Compile Include="Modules\AwsRds.vb" />
     <Compile Include="Modules\FunctionBase.vb" />
